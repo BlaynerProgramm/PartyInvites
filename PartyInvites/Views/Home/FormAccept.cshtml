@@ -1,0 +1,32 @@
+﻿@model PartyInvites.Models.GuestResponse;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Форма подтверждения</title>
+    </head>
+    <body>
+        <form asp-action="FormAccept" method="post">
+            <div>
+                <label asp-for="Name">Твоё имя (полностью)</label>
+                <input asp-for="Name" />
+            </div>
+            <div>
+                <label asp-for="Email">Твой Email</label>
+                <input asp-for="Email" />
+            </div>
+            <div>
+                <label>Ты пойдёшь на вечеринку?</label>
+                <select asp-for="AcceptStatus">
+                    <option value="true">Да, пойду</option>
+                    <option value="false">Нет, я не смогу</option>
+                    <option value="">Пока не знаю, но решу в ближайшее время</option>
+                </select>
+            </div>
+            <button type="submit">Подтвердить</button>
+        </form>
+    </body>
+</html>
