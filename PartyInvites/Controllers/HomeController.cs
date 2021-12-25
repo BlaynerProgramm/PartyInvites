@@ -30,6 +30,11 @@ namespace PartyInvites.Controllers
             return View("Thanks", guestResponse);
         }
 
+        public IActionResult ListResponse()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
