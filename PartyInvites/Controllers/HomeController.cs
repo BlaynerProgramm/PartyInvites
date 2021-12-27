@@ -3,6 +3,7 @@
 using PartyInvites.Models;
 
 using System.Diagnostics;
+using System.Linq;
 
 namespace PartyInvites.Controllers
 {
@@ -27,12 +28,13 @@ namespace PartyInvites.Controllers
         [HttpPost]
         public IActionResult FormAccept(GuestResponse guestResponse)
         {
+            Repository.Add(guestResponse);
             return View("Thanks", guestResponse);
         }
 
         public IActionResult ListResponse()
         {
-            return View();
+            return View(Repository.GetRepository().Where(x => x.AcceptStatus == true));
         }
 
         public IActionResult Privacy()

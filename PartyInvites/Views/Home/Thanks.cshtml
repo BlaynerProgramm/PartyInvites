@@ -1,4 +1,5 @@
-﻿
+﻿@model PartyInvites.Models.GuestResponse
+
 @{
     Layout = null;
 }
@@ -6,16 +7,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Спасибо!</title>
+        <title>Благодарности</title>
     </head>
     <body>
-        <h1>Успешно</h1>
+        <h1>Спасибо, @Model.Name</h1>
         <div>
-            Спасибо, что подтвердил свой статус, ждём тебя на вечеринке [Данные].
+        @if(Model.AcceptStatus == true)
+        {
+            @: Спасибо, что подтвердил свой статус, ждём тебя на вечеринке [Данные].
+        }
+        else
+        {
+         @: Нам жаль, что вы не подтвердили статус, надеюсь, ты изменишь свой выбор.
+        }
+
         </div>
         <div>
-            <a asp-action="ListResponse">Здесь</a> можно узнат кто ещё пойдет.<br />
-            Спасибо за удиленное время!
+            <a asp-action="ListResponse">Здесь</a> можно узнать кто ещё пойдет.<br />
+            Спасибо за уделенное время!
         </div>
     </body>
 </html>
