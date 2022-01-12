@@ -10,6 +10,7 @@
     </head>
     <body>
         <form asp-action="FormAccept" method="post">
+            <div asp-validation-summary="All"></div>
             <div>
                 <label asp-for="Name">Твоё имя (полностью)</label>
                 <input asp-for="Name" />

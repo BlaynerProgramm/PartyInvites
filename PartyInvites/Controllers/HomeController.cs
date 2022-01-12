@@ -28,8 +28,15 @@ namespace PartyInvites.Controllers
         [HttpPost]
         public IActionResult FormAccept(GuestResponse guestResponse)
         {
-            Repository.Add(guestResponse);
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                Repository.Add(guestResponse);
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult ListResponse()
