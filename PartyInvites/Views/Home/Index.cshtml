@@ -5,11 +5,14 @@
 <html>
     <head>
         <title>Вечеринка</title>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
     </head>
     <body>
         <h1>Привет, мой дорогой друг!</h1>
         <div>
-            У нас тут начинается вечеринка и мы решили приглосить тебя. Пожалуйсто подтверди свой статус на вот <a asp-action="FormAccept">этой форме</a>.
+            <h2>У нас тут начинается вечеринка</h2>
+            <h3>и мы решили пригласить тебя!</h3>
+            Пожалуйсто подтверди свой статус на вот <a class="btn btn-primary" asp-action="FormAccept">этой форме</a>.
         </div>
     </body>
 </html>

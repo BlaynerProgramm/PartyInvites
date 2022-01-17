@@ -7,19 +7,22 @@
 <html>
     <head>
         <title>Форма подтверждения</title>
+        <link rel="stylesheet" href="/css/site.css"
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
     </head>
     <body>
-        <form asp-action="FormAccept" method="post">
+        <h5 class="bg-primary text-white text-center m-2 p-2">Форма подтверждения</h5>
+        <form class="m-2" asp-action="FormAccept" method="post">
             <div asp-validation-summary="All"></div>
-            <div>
+            <div class="input-group">
                 <label asp-for="Name">Твоё имя (полностью)</label>
                 <input asp-for="Name" />
             </div>
-            <div>
+            <div class="input-group">
                 <label asp-for="Email">Твой Email</label>
                 <input asp-for="Email" />
             </div>
-            <div>
+            <div class="input-group">
                 <label>Ты пойдёшь на вечеринку?</label>
                 <select asp-for="AcceptStatus">
                     <option value="true">Да, пойду</option>
@@ -27,7 +30,7 @@
                     <option value="">Пока не знаю, но решу в ближайшее время</option>
                 </select>
             </div>
-            <button type="submit">Подтвердить</button>
+            <button class="btn btn-primary" type="submit">Подтвердить</button>
         </form>
     </body>
 </html>
